@@ -7,7 +7,7 @@ Vue.use(Vuex);
 // znali na kojoj adresi nam je backend server
 export default new Vuex.Store({
   state: {
-    baseUrl: process.env.BACK_APP_URL
+    baseUrl: "http://localhost:5000"
   },
   mutations: {},
   actions: {},

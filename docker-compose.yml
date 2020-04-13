@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  back-end:
+    build: ./ELAB-TODO-FLASK
+    container_name: todo_flask
+    networks:
+      - elab_bridge
+    ports:
+      - "5000:5000"
+
+  front-end:
+    build: ./ELAB-TODO-VUE
+    container_name: todo_vue
+    networks:
+      - elab_bridge
+    depends_on:
+      - back-end
+    ports:
+      - "8080:8080"
+
+networks:
+  elab_bridge:
